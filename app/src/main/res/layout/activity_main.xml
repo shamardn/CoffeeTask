@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/details"
+        app:titleCentered="true"
+        app:menu="@menu/cart_menu" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:layout_marginTop="?attr/actionBarSize">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/coffeeBeansBg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bg_height_450dp"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:alpha="0.15"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coffee_beans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/green_circle"
+        android:layout_width="@dimen/large_circle_250"
+        android:layout_height="@dimen/large_circle_250"
+        android:layout_marginTop="@dimen/margin_50"
+        app:layout_constraintBottom_toBottomOf="@id/coffeeBeansBg"
+        app:layout_constraintEnd_toEndOf="@id/coffeeBeansBg"
+        app:layout_constraintStart_toStartOf="@id/coffeeBeansBg"
+        app:layout_constraintTop_toTopOf="@id/coffeeBeansBg"
+        style="@style/circle_bg" />
+
+    <ImageView
+        android:id="@+id/coffee_cup"
+        android:layout_width="@dimen/cup_large_size_400"
+        android:layout_height="@dimen/cup_large_size_400"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:layout_marginBottom="@dimen/margin_outside_25"
+        app:layout_constraintBottom_toBottomOf="@id/green_circle"
+        app:layout_constraintEnd_toEndOf="@id/green_circle"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@id/green_circle"
+        app:srcCompat="@drawable/starbucks_coffee" />
+
+    <TextView
+        android:id="@+id/drinkName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/amiko_bold"
+        android:maxWidth="@dimen/maxWidth_item_name_200"
+        android:text="@string/item_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_24"
+        app:layout_constraintBottom_toBottomOf="@id/coffeeBeansBg"
+        app:layout_constraintStart_toStartOf="@id/coffeeBeansBg" />
+
+    <TextView
+        android:id="@+id/drink_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_price"
+        android:textSize="@dimen/text_24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/drinkName"
+        app:layout_constraintEnd_toEndOf="@id/coffeeBeansBg"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/drinkName"
+        app:layout_constraintTop_toTopOf="@+id/drinkName"
+        android:fontFamily="@font/amiko_bold"
+        style="@style/text_style" />
+
+    <TextView
+        android:id="@+id/bestSales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/amiko_bold"
+        android:text="@string/best_sales"
+        android:textSize="@dimen/text_10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/coffeeBeansBg"
+        app:layout_constraintEnd_toEndOf="@id/drink_price"
+        app:layout_constraintTop_toBottomOf="@+id/drink_price" />
+
+    <TextView
+        android:id="@+id/size_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:fontFamily="@font/amiko_bold"
+        android:text="@string/size_options"
+        android:textSize="@dimen/text_14sp"
+        app:layout_constraintStart_toStartOf="@+id/drinkName"
+        app:layout_constraintTop_toBottomOf="@id/drinkName" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tall_cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toStartOf="@+id/grande_cup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/size_options">
+
+        <ImageView
+            android:id="@+id/cup_tall"
+            android:padding="@dimen/padding_10"
+            android:src="@drawable/ic_coffee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cup_bg.light" />
+
+        <TextView
+            android:id="@+id/cup_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/tall"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_tall"
+            app:layout_constraintStart_toStartOf="@+id/cup_tall"
+            app:layout_constraintTop_toBottomOf="@+id/cup_tall" />
+
+        <TextView
+            android:id="@+id/cup_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/_12_fl_oz"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_sort"
+            app:layout_constraintStart_toStartOf="@+id/cup_sort"
+            app:layout_constraintTop_toBottomOf="@+id/cup_sort" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grande_cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tall_cup"
+        app:layout_constraintEnd_toStartOf="@+id/venti_cup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tall_cup"
+        app:layout_constraintTop_toBottomOf="@+id/size_options">
+
+        <ImageView
+            android:id="@+id/cup_grande"
+            android:padding="@dimen/padding_8"
+            android:src="@drawable/ic_coffee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cup_bg.light" />
+
+        <TextView
+            android:id="@+id/cup_sort_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/grande"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_grande"
+            app:layout_constraintStart_toStartOf="@+id/cup_grande"
+            app:layout_constraintTop_toBottomOf="@+id/cup_grande" />
+
+        <TextView
+            android:id="@+id/cup_size_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/_16_fl_oz"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_sort_g"
+            app:layout_constraintStart_toStartOf="@+id/cup_sort_g"
+            app:layout_constraintTop_toBottomOf="@+id/cup_sort_g" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/venti_cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/grande_cup"
+        app:layout_constraintEnd_toStartOf="@+id/custom_cup"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/grande_cup"
+        app:layout_constraintTop_toTopOf="@+id/grande_cup">
+
+        <ImageView
+            android:id="@+id/cup_venti"
+            android:padding="@dimen/padding_6"
+            android:src="@drawable/ic_coffee_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cup_bg"/>
+
+        <TextView
+            android:id="@+id/cup_sort_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/venti"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_venti"
+            app:layout_constraintStart_toStartOf="@+id/cup_venti"
+            app:layout_constraintTop_toBottomOf="@+id/cup_venti" />
+
+        <TextView
+            android:id="@+id/cup_size_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/_24_fl_oz"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_sort_v"
+            app:layout_constraintStart_toStartOf="@+id/cup_sort_v"
+            app:layout_constraintTop_toBottomOf="@+id/cup_sort_v" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/custom_cup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/venti_cup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/venti_cup"
+        app:layout_constraintTop_toTopOf="@+id/venti_cup">
+
+        <ImageView
+            android:id="@+id/cup_custom"
+             android:padding="@dimen/padding_8"
+            android:src="@drawable/ic_coffee"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cup_bg.light" />
+
+        <TextView
+            android:id="@+id/cup_sort_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/custom"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_custom"
+            app:layout_constraintStart_toStartOf="@+id/cup_custom"
+            app:layout_constraintTop_toBottomOf="@+id/cup_custom" />
+
+        <TextView
+            android:id="@+id/cup_size_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amiko_bold"
+            android:text="@string/fl_oz"
+            android:textSize="@dimen/text_10sp"
+            app:layout_constraintEnd_toEndOf="@+id/cup_sort_c"
+            app:layout_constraintStart_toStartOf="@+id/cup_sort_c"
+            app:layout_constraintTop_toBottomOf="@+id/cup_sort_c" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_minus"
+        android:layout_width="@dimen/circle_36"
+        android:layout_height="@dimen/circle_36"
+        android:layout_marginStart="@dimen/margin_24"
+        android:layout_marginTop="@dimen/circle_36"
+        android:layout_marginBottom="@dimen/size_icon_48"
+        style="@style/cup_bg"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tall_cup"
+        android:background="@drawable/circle_bg"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="@dimen/circle_36"
+        android:layout_height="@dimen/circle_36"
+        android:layout_marginStart="@dimen/margin_16"
+        style="@style/cup_bg"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_minus"
+        app:layout_constraintStart_toEndOf="@+id/tv_quantity"
+        app:layout_constraintTop_toTopOf="@+id/btn_minus"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@drawable/circle_bg"/>
+
+    <TextView
+        android:id="@+id/tv_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:text="@string/_1"
+        android:maxLength="2"
+        android:fontFamily="@font/amiko_bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_20"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_minus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintStart_toEndOf="@+id/btn_minus"
+        app:layout_constraintTop_toTopOf="@+id/btn_minus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_to_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/margin_24"
+        android:paddingStart="@dimen/padding_24"
+        android:paddingEnd="@dimen/padding_24"
+        android:text="@string/add_to_order"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/margin_50"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_add"
+        android:fontFamily="@font/amiko_bold"
+        style="@style/filled_button_style" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

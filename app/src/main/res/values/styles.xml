@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="cup_icon_style">
+        <item name="android:layout_width">@dimen/size_icon_48</item>
+        <item name="android:layout_height">@dimen/size_icon_48</item>
+        <item name="android:layout_marginStart">@dimen/margin_16</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginEnd">@dimen/margin_16</item>
+    </style>
+
+    <style name="circle_bg">
+        <item name="android:background">@drawable/circle_bg</item>
+    </style>
+
+    <style name="text_style">
+        <item name="android:textColor">@color/my_primary_color</item>
+    </style>
+
+    <style name="cup_bg" parent="cup_icon_style">
+        <item name="android:background">@drawable/circle_bg</item>
+    </style>
+    <style name="cup_bg.light" parent="cup_icon_style">
+        <item name="android:background">@drawable/light_color_circle_bg</item>
+    </style>
+
+    <style name="filled_button_style">
+        <item name="android:textColor">@color/my_secondary_color</item>
+        <item name="android:backgroundTint">@color/my_primary_color</item>
+    </style>
+
+</resources>

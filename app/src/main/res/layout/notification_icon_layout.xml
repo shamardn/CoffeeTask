@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/custom_notification_icon"
+        android:layout_width="@dimen/margin_24"
+        android:layout_height="@dimen/margin_24"
+        android:layout_marginEnd="@dimen/margin_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_shopping_basket" />
+
+    <ImageView
+        android:id="@+id/custom_notification_pop"
+        android:layout_width="@dimen/padding_10"
+        android:layout_height="@dimen/padding_10"
+        android:src="@drawable/circle_bg"
+        app:layout_constraintTop_toTopOf="@id/custom_notification_icon"
+        app:layout_constraintEnd_toEndOf="@id/custom_notification_icon"
+        app:layout_goneMarginTop="@dimen/margin_5"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

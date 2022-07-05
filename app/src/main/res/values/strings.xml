@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StarBucksCoffeeTask</string>
+    <string name="details">Details</string>
+    <string name="item_price">$30.00</string>
+    <string name="best_sales">Best Sales</string>
+    <string name="size_options">Size Options</string>
+    <string name="item_name">Caramel Frappuccino</string>
+    <string name="tall">Tall</string>
+    <string name="_12_fl_oz">12 Fl Oz</string>
+    <string name="grande">Grande</string>
+    <string name="_16_fl_oz">16 Fl Oz</string>
+    <string name="venti">Venti</string>
+    <string name="_24_fl_oz">24 Fl Oz</string>
+    <string name="custom">Custom</string>
+    <string name="fl_oz">-- Fl Oz</string>
+    <string name="_1">1</string>
+    <string name="add_to_order">Add to Order</string>
+</resources>
